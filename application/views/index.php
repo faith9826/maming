@@ -4,6 +4,6 @@
         <?php $this->load->view('head');?>
     </head>
     <body>
-        <p>Maming Main Page</p>
+        <?php $this->load->view("home/$body");?>
     </body>
 </html>
