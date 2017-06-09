@@ -3,9 +3,9 @@ class Home extends CI_Controller{
     public function index(){
         //parent::__construct();
 
-        $this->load->model('Mod_home');
+        $this->load->model('Mod_DBmb');
 
-        $data['mb_count'] = $this->Mod_home->mb_counter();
+        $data['mb_count'] = $this->Mod_DBmb->mb_counter();
 
         if($data['mb_count'] == 0){
             echo $data['mb_count'];
