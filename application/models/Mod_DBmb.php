@@ -10,5 +10,9 @@ class Mod_DBmb extends CI_Model {
         return $this->db->count_all('mm_mb');
     }
 
+    public function admin_creater(){
+        $test = $this->input->post('admin_id').'in Model';
+        echo $test;
+    }
 }
 ?>
