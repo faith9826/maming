@@ -24,12 +24,15 @@ class Home extends CI_Controller{
             $this->load->helper('url');
             redirect(base_url());
         }else{
-            $this->load->helper(array('form', 'url'));
+            $this->load->helper(array('form', 'url', 'msg'));
             $this->load->library('form_validation');
 
+            $msg = msg();
+
+            echo $msg['R000'];
             /* form validation */
             $this->form_validation->set_rules(
-                'admin_id', '관리자 계정',
+                'admin_id', '관리자 아이디',
                 'required|min_length[3]|max_length[20]',
                 array(
                     'required' => '%s을 입력해주세요.'
@@ -49,6 +52,31 @@ class Home extends CI_Controller{
                 'required|min_length[8]|max_length[15]|matches[admin_pw]',
                 array(
                     'required' => '%s을 입력해주세요.'
+                )
+            );
+
+            $this->form_validation->set_rules(
+                'admin_fname', '성',
+                'required|min_length[1]|max_length[15]',
+                array(
+                    'required' => '%s을 입력해주세요.'
+                )
+            );
+
+            $this->form_validation->set_rules(
+                'admin_gname', '이름',
+                'required|min_length[1]|max_length[15]',
+                array(
+                    'required' => '%s을 입력해주세요.'
+                )
+            );
+
+            $this->form_validation->set_rules(
+                'admin_email', '이메일',
+                'required|valid_email',
+                array(
+                    'required' => '%s을 입력해주세요.',
+                    'valid_email' => '%s형식이 아닙니다.'
                 )
             );
 
