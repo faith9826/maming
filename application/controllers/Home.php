@@ -29,7 +29,8 @@ class Home extends CI_Controller{
 
             $msg = msg();
 
-            echo $msg['R000'];
+            echo $msg['R001'];
+
             /* form validation */
             $this->form_validation->set_rules(
                 'admin_id', '관리자 아이디',
